@@ -1,0 +1,39 @@
+/**
+ * Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
+ 
+ //Refer Floyd's Algorithm
+ 
+class Solution {
+public:
+    ListNode* find_pos(ListNode *p, ListNode* head){
+        ListNode* q = head;
+        int count = 0;
+        while (p != q){
+            p= p->next;
+            q = q->next;
+            //count ++;
+        }
+        return p;
+    }
+    
+    ListNode *detectCycle(ListNode *head) {
+        ListNode *p = head;
+        ListNode *q = head;
+        if (head==NULL) return NULL;
+        while(q->next != NULL && q->next->next !=NULL){
+            p = p->next;
+            q = q->next->next;
+            if(p==q) {
+                return find_pos(p,head);
+            }
+        }
+        return NULL;
+            
+    }
+};
