@@ -1,0 +1,22 @@
+ Best Time to Buy and Sell Stock II
+ 
+
+class Solution {
+public:
+
+    int maxProfit(vector<int>& prices) {
+        
+        if (prices.size() <= 1) return 0;
+        int sum = 0;
+        for(int i=0; i<prices.size()-1;i++){
+        //keep going down till u find the valley
+            while(i<prices.size()-1 && prices[i+1] < prices[i]) i++;
+            sum -= prices[i];
+        //keep going up till you find the peak
+            while(i<prices.size()-1 && prices[i+1] > prices[i]) i++;
+            sum +=prices[i];
+        }
+        return sum;
+    }
+        
+};
