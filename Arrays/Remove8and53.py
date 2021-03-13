@@ -1,11 +1,10 @@
 #Remove the numbers 8 and 53 from the sequence and also convert to lower case
-
 n = list(str(input("enter string: ")))
 if not "".join(n).isalnum():
     print("INVALID")
     
 count = 0
-i = 0
+i = -1
 
 while(i<len(n)-1):
     i+=1
@@ -21,5 +20,3 @@ while(i<len(n)-1):
     
     print(str(i) + ': ' + ''.join(n) + ' : ' + str(count))
 print(''.join(n[:i-count+1]))
-
-
