@@ -1,0 +1,8 @@
+s= "123"
+f=1
+if(int(s)<0):
+    print("error")
+else:
+    for i in s:
+        f=f*int(i)
+    print(f)
