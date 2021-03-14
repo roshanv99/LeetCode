@@ -1,0 +1,22 @@
+#If the elements are sloping upwards/increasing order add them
+
+inp = "2 201 2 3 200 4 5"
+lst = list(map(int,inp.split(" ")))
+i =0
+l = []
+sum = 0 
+
+while(i<len(lst)):
+    while(i<len(lst)-1 and lst[i] < lst[i+1]):
+        print('!' + str(lst[i]))
+        sum += lst[i]
+        i+=1
+
+    if lst[i-1] < lst[i] and i!=0: 
+        sum += lst[i]
+        l.append(sum)
+    
+    sum =0 
+    i+=1
+    
+print(l)
