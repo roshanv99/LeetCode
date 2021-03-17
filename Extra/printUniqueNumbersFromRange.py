@@ -19,3 +19,16 @@ for key,value in l.items() :
        uc.append(int(key)) 
 
 print(uc)
+
+
+
+
+'''OR'''
+n1 = int(input())
+n2 = int(input())
+l = ""
+for i in range(n1, n2+1):
+    l += str(i)
+for i in range(10):
+    if l.count(str(i)) == 1:
+        print(i, end=" ")
