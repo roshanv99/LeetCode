@@ -1,0 +1,23 @@
+#Divide and Conquer: Same as reverse string
+class Solution:
+    
+    def rev(self,s):
+        length = len(list(s))
+        if length == 1:
+            return s
+        l_s = s[0:int(length/2)]
+        r_s = s[int(length/2):]
+        return self.rev(r_s) + self.rev(l_s)
+    
+    def reverse(self, x: int) -> int:
+        ans = (int("".join(self.rev(list(str(abs(x)))))))
+        if ans>2**31 or ans<-2**31:
+            return 0
+        elif x < 0:
+            return -1*ans
+        else:
+            return ans
+            
+            
+            
+            
