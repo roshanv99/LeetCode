@@ -1,3 +1,6 @@
+class Solution:
+# @param {ListNode} head
+# @return {ListNode}
 def reverseList(self, head):
     return self._reverse(head)
 
